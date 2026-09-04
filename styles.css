@@ -729,6 +729,14 @@ h1, h2, h3, h4 {
   margin-bottom: 10px;
 }
 
+.footer-contact p a {
+  color: inherit;
+}
+
+.footer-contact p a:hover {
+  color: var(--cyan-primary);
+}
+
 .footer-bottom {
   padding-top: 30px;
   border-top: 1px solid var(--border-color);
@@ -777,4 +785,74 @@ h1, h2, h3, h4 {
   .footer-container {
     grid-template-columns: 1fr;
   }
+}
+
+/* Simple content pages (About, Privacy, Terms) */
+.page-hero {
+  padding: 60px 0 20px;
+  text-align: center;
+}
+
+.page-hero .section-title {
+  margin-bottom: 10px;
+}
+
+.page-updated {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.prose {
+  max-width: 760px;
+  margin: 0 auto;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+.prose h2 {
+  color: var(--text-main);
+  font-size: 1.35rem;
+  margin: 40px 0 14px;
+}
+
+.prose h2:first-child {
+  margin-top: 0;
+}
+
+.prose p {
+  margin-bottom: 16px;
+}
+
+.prose ul {
+  margin: 0 0 16px 22px;
+}
+
+.prose li {
+  margin-bottom: 8px;
+}
+
+.prose strong {
+  color: var(--text-main);
+}
+
+.about-values {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin: 40px 0;
+}
+
+.about-values .glass-card {
+  padding: 28px;
+}
+
+.about-values h3 {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+.about-values p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
 }
