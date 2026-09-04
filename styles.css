@@ -186,6 +186,10 @@ h1, h2, h3, h4 {
   align-items: center;
 }
 
+.nav-menu .btn {
+  display: none;
+}
+
 .mobile-hamburger {
   display: none;
   background: none;
@@ -778,6 +782,13 @@ h1, h2, h3, h4 {
   }
   .mobile-hamburger {
     display: flex;
+  }
+  .nav-actions > .btn {
+    display: none;
+  }
+  .nav-menu .btn {
+    display: inline-flex;
+    margin-top: 10px;
   }
   .hero-cta-group {
     flex-direction: column;
