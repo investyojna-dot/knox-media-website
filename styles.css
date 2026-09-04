@@ -549,15 +549,40 @@ h1, h2, h3, h4 {
   border: 1px solid #E2E8F0;
 }
 
+.case-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.case-avatar {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.case-card-heading h3 {
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+
 .case-badge {
   display: inline-block;
   padding: 4px 12px;
   border-radius: 20px;
   background: rgba(2, 132, 199, 0.08);
   color: #0284C7;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  margin-bottom: 16px;
 }
 
 .case-metric-highlight {
@@ -567,6 +592,28 @@ h1, h2, h3, h4 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: 10px 0;
+}
+
+.case-quote {
+  margin: 18px 0 10px;
+  padding-top: 18px;
+  border-top: 1px solid #E2E8F0;
+  font-style: italic;
+  color: var(--text-main);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.case-attribution {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.case-nda {
+  font-weight: 400;
+  font-style: italic;
+  opacity: 0.75;
 }
 
 /* Contact Section */

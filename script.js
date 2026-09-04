@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Contact Form Submission Handling
   const contactForm = document.getElementById('contactForm');
   const formSuccessMsg = document.getElementById('formSuccess');
-  const INQUIRY_ENDPOINT = 'https://xcirhtk3hc7xizsrrxmrxdgvrm0bgneq.lambda-url.ap-south-1.on.aws/';
+  const INQUIRY_ENDPOINT = 'https://dj731mkknb.execute-api.ap-south-1.amazonaws.com/';
 
   if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
