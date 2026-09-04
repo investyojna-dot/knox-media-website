@@ -70,21 +70,43 @@ document.addEventListener('DOMContentLoaded', () => {
   // Contact Form Submission Handling
   const contactForm = document.getElementById('contactForm');
   const formSuccessMsg = document.getElementById('formSuccess');
+  const INQUIRY_ENDPOINT = 'https://xcirhtk3hc7xizsrrxmrxdgvrm0bgneq.lambda-url.ap-south-1.on.aws/';
 
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      
+
       const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn.textContent;
 
       submitBtn.textContent = 'Submitting Request... ⏳';
       submitBtn.disabled = true;
 
-      setTimeout(() => {
+      const payload = {
+        fullName: document.getElementById('fullName').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        website: document.getElementById('website').value,
+        service: document.getElementById('service').value,
+      };
+
+      try {
+        const res = await fetch(INQUIRY_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        if (!res.ok) throw new Error('Submission failed');
+
         submitBtn.style.display = 'none';
         formSuccessMsg.style.display = 'block';
         contactForm.reset();
-      }, 1000);
+      } catch (err) {
+        submitBtn.textContent = 'Something went wrong — try again ⚠️';
+        submitBtn.disabled = false;
+        setTimeout(() => { submitBtn.textContent = originalBtnText; }, 3000);
+      }
     });
   }
 
