@@ -1,0 +1,17 @@
+RewriteEngine On
+RewriteBase /
+
+# Extensionless real pages
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^about/?$ about.html [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^privacy/?$ privacy.html [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^terms/?$ terms.html [L]
+
+# Homepage section slugs
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(services|calculator|process|contact)/?$ index.html [L]

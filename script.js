@@ -110,6 +110,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Clean URL section navigation (e.g. /contact instead of #contact)
+  const SECTION_SLUGS = ['services', 'calculator', 'process', 'contact'];
+  const isHomepage = !!document.getElementById('hero');
+
+  function scrollToSection(slug) {
+    const el = document.getElementById(slug);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  if (isHomepage) {
+    const currentPath = window.location.pathname.replace(/^\/|\/$/g, '');
+    if (SECTION_SLUGS.includes(currentPath)) {
+      setTimeout(() => scrollToSection(currentPath), 50);
+    }
+
+    document.querySelectorAll('a[href^="/"]').forEach(link => {
+      const slug = link.getAttribute('href').replace(/^\/|\/$/g, '');
+      if (SECTION_SLUGS.includes(slug)) {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          scrollToSection(slug);
+          history.pushState(null, '', '/' + slug);
+        });
+      }
+    });
+
+    window.addEventListener('popstate', () => {
+      const path = window.location.pathname.replace(/^\/|\/$/g, '');
+      if (SECTION_SLUGS.includes(path)) scrollToSection(path);
+      else window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
   // Navbar shadow on scroll
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
