@@ -531,89 +531,53 @@ h1, h2, h3, h4 {
   color: var(--text-main);
 }
 
-/* Case Studies Grid */
-.case-studies {
+/* How We Work / Process */
+.process-section {
   background-color: #FFFFFF;
 }
 
-.case-grid {
+.process-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 30px;
 }
 
-.case-card {
-  padding: 36px;
-  text-align: center;
+.process-card {
+  position: relative;
+  padding: 36px 30px;
   background: #FFFFFF;
   border: 1px solid #E2E8F0;
 }
 
-.case-card-header {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  text-align: left;
-  margin-bottom: 8px;
+.process-step {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--border-color);
 }
 
-.case-avatar {
-  flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
+.process-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #FFFFFF;
-  font-weight: 800;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
 }
 
-.case-card-heading h3 {
-  font-size: 1.05rem;
-  margin-bottom: 4px;
+.process-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
 
-.case-badge {
-  display: inline-block;
-  padding: 4px 12px;
-  border-radius: 20px;
-  background: rgba(2, 132, 199, 0.08);
-  color: #0284C7;
-  font-size: 0.75rem;
-  font-weight: 600;
-}
-
-.case-metric-highlight {
-  font-size: 3.5rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, #10B981, #0284C7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin: 10px 0;
-}
-
-.case-quote {
-  margin: 18px 0 10px;
-  padding-top: 18px;
-  border-top: 1px solid #E2E8F0;
-  font-style: italic;
-  color: var(--text-main);
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-
-.case-attribution {
-  font-size: 0.85rem;
-  font-weight: 600;
+.process-card p {
   color: var(--text-muted);
-}
-
-.case-nda {
-  font-weight: 400;
-  font-style: italic;
-  opacity: 0.75;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 /* Contact Section */
